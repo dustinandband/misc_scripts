@@ -50,5 +50,5 @@ if [ ! -e "SourceTVDemoUploader.py" ]; then
 	chmod +x SourceTVDemoUploader.py
 fi
 
-SourceTVDemoUploader.py ${demofiles_path[$j]} b2_authorize_account_id b2_authorize_accountkey
+./SourceTVDemoUploader.py ${demofiles_path[$j]} $b2_authorize_account_id $b2_authorize_accountkey
 ```  
