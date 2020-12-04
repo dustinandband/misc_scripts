@@ -1,5 +1,27 @@
 # SourceTVDemoUploader  
 
+###Update: Dec 4, 2020  
+
+Added some printed text to help debug why files aren't available for download at the survival archive website.  
+
+1)  
+
+Change  
+```sh
+./SourceTVDemoUploader.py ${demofiles_path[$j]} $b2_authorize_account_id $b2_authorize_accountkey
+```  
+
+to  
+ 
+```sh
+./SourceTVDemoUploader.py ${demofiles_path[$j]} $b2_authorize_account_id $b2_authorize_accountkey > SourceTVUploadLog.log 
+```  
+
+2)  
+Download new SourceTVDemoUploader.py file which just prints out the json response to the log file.  
+
+-------------------------------------------  
+
 Edit of someone else's [script](https://github.com/volnt/e2e-upload/blob/07a29fe00345492193c137774948de8c3e5b5246/project/upload/backblaze.py) for uploading sourceTV demo recordings to backblack b2 storage.  
 
 Edits needed to Survival Network auto-restart.sh script:  

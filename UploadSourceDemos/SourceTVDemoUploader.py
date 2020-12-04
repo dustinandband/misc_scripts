@@ -80,10 +80,12 @@ AuthToken = response['authorizationToken'] #slightly different than first auth k
 
 for entry in os.scandir(sourceTVDemos_path):
 	if entry.is_file():
+		print("-------------------------------\n Uploading File: {}\n".format(entry.name))
 		# sourceTV demos end in .gz and contain "auto" in the name
 		if '.gz' in pathlib.Path(entry.name).suffixes and 'auto' in entry.name:
 			response = b2_upload_file(uploadURL, AuthToken, entry.name)
-			#print(response)
+			response_formatted = json.dumps(response, indent=2)
+			print("Response:\n{}\n".format(response_formatted))
 			if 'uploadTimestamp' in response:
 				# Assume upload succeeded. Go ahead and delete locally
 				print("Succeeded uploading {} . Removing file locally..".format(response['fileName']))
