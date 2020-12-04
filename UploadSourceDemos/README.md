@@ -1,24 +1,24 @@
 # SourceTVDemoUploader  
 
-###Update: Dec 4, 2020  
+### Update: Dec 4, 2020  
 
 Added some printed text to help debug why files aren't available for download at the survival archive website.  
 
 1)  
 
-Change  
+Within the restart.sh script (previously auto-restart.sh), change this:  
 ```sh
 ./SourceTVDemoUploader.py ${demofiles_path[$j]} $b2_authorize_account_id $b2_authorize_accountkey
 ```  
 
-to  
+to this:  
  
 ```sh
 ./SourceTVDemoUploader.py ${demofiles_path[$j]} $b2_authorize_account_id $b2_authorize_accountkey > SourceTVUploadLog.log 
 ```  
 
 2)  
-Download new SourceTVDemoUploader.py file which just prints out the json response to the log file.  
+Download new SourceTVDemoUploader.py file (or just delete previous one and have restart.sh script download it again), which just prints out the json response of each sourceTV demo upload to a log file named SourceTVUploadLog.log.  
 
 -------------------------------------------  
 
