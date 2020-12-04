@@ -14,7 +14,7 @@ Within the restart.sh script (previously auto-restart.sh), change this:
 to this:  
  
 ```sh
-./SourceTVDemoUploader.py ${demofiles_path[$j]} $b2_authorize_account_id $b2_authorize_accountkey > SourceTVUploadLog.log 
+./SourceTVDemoUploader.py ${demofiles_path[$j]} $b2_authorize_account_id $b2_authorize_accountkey >> SourceTVUploadLog.log 
 ```  
 
 2)  
