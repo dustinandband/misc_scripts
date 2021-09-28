@@ -23,7 +23,7 @@ def b2_authorize_account(account_id, account_key):
 		headers = headers
     )
 
-	response = urllib.request.urlopen(request)
+	response = urllib.request.urlopen(request, timeout = 6)
 	response_data = json.loads(response.read().decode("utf-8"))
 	response.close()
 	
